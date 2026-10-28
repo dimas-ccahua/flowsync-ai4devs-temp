@@ -70,3 +70,13 @@ export const ResponsableSinNombre: Story = {
     },
   },
 }
+
+// El responsable de la fila se anuncia por su nombre, no solo se ve en iniciales.
+export const AvatarDelResponsable: Story = {
+  play: async ({ canvas }) => {
+    const row = canvas.getByRole('listitem')
+    await expect(row).toContainElement(
+      canvas.getByRole('img', { name: 'Lucía Fernández' }),
+    )
+  },
+}
